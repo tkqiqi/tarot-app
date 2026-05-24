@@ -5,8 +5,9 @@ import Dashboard from './pages/Dashboard';
 import Users from './pages/Users';
 import Pricing from './pages/Pricing';
 import Settings from './pages/Settings';
+import Recharge from './pages/Recharge';
 
-type Page = 'dashboard' | 'users' | 'pricing' | 'settings';
+type Page = 'dashboard' | 'users' | 'pricing' | 'settings' | 'recharge';
 
 export default function App() {
   const [token, setToken] = useState<string | null>(localStorage.getItem('admin_token'));
@@ -37,6 +38,9 @@ export default function App() {
         <button className={`nav-item ${page === 'users' ? 'active' : ''}`} onClick={() => setPage('users')}>
           👥 用户管理
         </button>
+        <button className={`nav-item ${page === 'recharge' ? 'active' : ''}`} onClick={() => setPage('recharge')}>
+          💰 充值管理
+        </button>
         <button className={`nav-item ${page === 'pricing' ? 'active' : ''}`} onClick={() => setPage('pricing')}>
           🪙 价格配置
         </button>
@@ -51,6 +55,7 @@ export default function App() {
       <main className="main-content">
         {page === 'dashboard' && <Dashboard />}
         {page === 'users' && <Users />}
+        {page === 'recharge' && <Recharge />}
         {page === 'pricing' && <Pricing />}
         {page === 'settings' && <Settings />}
       </main>
