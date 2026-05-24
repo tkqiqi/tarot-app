@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const api = axios.create({ baseURL: 'http://192.168.1.3:3000/api', timeout: 60000 });
+const api = axios.create({ baseURL: 'https://tarot-app-0dnk.onrender.com/api', timeout: 60000 });
 
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
