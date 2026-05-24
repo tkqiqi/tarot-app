@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const api = axios.create({ baseURL: 'https://tarot-app-0dnk.onrender.com/api', timeout: 60000 });
+const api = axios.create({ baseURL: 'https://tarot-app-0dnk.onrender.com/api', timeout: 90000 });
 
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
@@ -10,7 +10,15 @@ api.interceptors.request.use((config) => {
 
 api.interceptors.response.use(
   (res) => res.data,
-  (error) => Promise.reject(new Error(error.response?.data?.message || '网络请求失败'))
+  async (error) => {
+    // 重试一次（处理 Render 冷启动）
+    if (error.config && !error.config.__retried && (!error.response || error.code === 'ECONNABORTED')) {
+      error.config.__retried = true;
+      return api.request(error.config);
+    }
+    const msg = error.response?.data?.message || error.message || '网络请求失败';
+    return Promise.reject(new Error(msg));
+  }
 );
 
 export default api;
