@@ -1,0 +1,44 @@
+{
+  "name": "@tarot/mobile",
+  "version": "1.0.0",
+  "private": true,
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@expo/metro-runtime": "~56.0.11",
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "@react-navigation/bottom-tabs": "^6.5.11",
+    "@react-navigation/native": "^6.1.9",
+    "@react-navigation/native-stack": "^6.9.17",
+    "@tarot/shared": "file:../shared",
+    "axios": "^1.6.5",
+    "babel-preset-expo": "^56.0.11",
+    "expo": "^56.0.3",
+    "expo-linear-gradient": "~56.0.4",
+    "expo-modules-core": "~56.0.12",
+    "expo-status-bar": "~56.0.4",
+    "lottie-react-native": "~7.3.4",
+    "metro": "^0.84.2",
+    "metro-config": "^0.80.4",
+    "metro-resolver": "^0.80.4",
+    "react": "19.2.3",
+    "react-native": "0.85.3",
+    "react-native-reanimated": "4.3.1",
+    "react-native-safe-area-context": "~5.7.0",
+    "react-native-screens": "4.25.1",
+    "react-native-svg": "15.15.4",
+    "react-native-web": "^0.21.2",
+    "react-native-worklets": "^0.8.3",
+    "zustand": "^4.4.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "@types/react": "~18.2.45",
+    "typescript": "^5.3.0"
+  }
+}

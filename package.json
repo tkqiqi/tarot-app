@@ -1,0 +1,21 @@
+{
+  "name": "tarot-app",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "shared",
+    "backend",
+    "admin"
+  ],
+  "scripts": {
+    "dev:backend": "npm run dev -w backend",
+    "dev:mobile": "npm run start -w mobile",
+    "dev:admin": "npm run dev -w admin",
+    "build:shared": "npm run build -w shared",
+    "build:backend": "npm run build -w backend",
+    "build:admin": "npm run build -w admin"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0"
+  }
+}
