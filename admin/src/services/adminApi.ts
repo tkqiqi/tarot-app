@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE = 'http://localhost:3000/api';
+const API_BASE = 'https://tarot-app-0dnk.onrender.com/api';
 
 const adminApi = axios.create({
   baseURL: API_BASE,
